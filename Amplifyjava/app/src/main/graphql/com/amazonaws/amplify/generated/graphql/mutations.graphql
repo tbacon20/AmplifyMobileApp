@@ -1,0 +1,25 @@
+# this is an auto generated file. This will be overwritten
+mutation InputUserKeys(
+  $user_id: String
+  $ecc_key_id: String
+  $ecc_public_key: String
+  $ttl: Int
+) {
+  inputUserKeys(
+    user_id: $user_id
+    ecc_key_id: $ecc_key_id
+    ecc_public_key: $ecc_public_key
+    ttl: $ttl
+  ) {
+    user_id
+    ecc_key_id
+    ecc_public_key
+    ttl
+  }
+}
+mutation SendEncryptedData($encrypted_data_string: String!) {
+  sendEncryptedData(encrypted_data_string: $encrypted_data_string)
+}
+mutation IntializeSession($clear_session_id: String!, $username: String!) {
+  intializeSession(clear_session_id: $clear_session_id, username: $username)
+}

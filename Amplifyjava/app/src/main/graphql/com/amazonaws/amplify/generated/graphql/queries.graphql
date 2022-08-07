@@ -1,0 +1,21 @@
+# this is an auto generated file. This will be overwritten
+query GetNewApi {
+  getNewApi {
+    api_key
+  }
+}
+query GetSignedSessionID {
+  getSignedSessionID {
+    signed_session_id
+    clear_session_id
+  }
+}
+query GetSystemPublicKeys {
+  getSystemPublicKeys {
+    system_date_time_expiring
+    rsa_key_id
+    rsa_public_key
+    ecc_key_id
+    ecc_public_key
+  }
+}

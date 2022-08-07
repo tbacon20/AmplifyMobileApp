@@ -1,0 +1,15 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplifyjavatodo-staging-142017-authRole",
+      "UnauthRoleArn": "arn:aws:iam::912373034509:role/amplify-amplifyjavatodo-staging-142017-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::912373034509:role/amplify-amplifyjavatodo-staging-142017-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-amplifyjavatodo-staging-142017-deployment",
+      "UnauthRoleName": "amplify-amplifyjavatodo-staging-142017-unauthRole",
+      "StackName": "amplify-amplifyjavatodo-staging-142017",
+      "StackId": "arn:aws:cloudformation:us-east-1:912373034509:stack/amplify-amplifyjavatodo-staging-142017/9b941c00-f2ff-11ec-9db6-0ed2f5bb083d",
+      "AmplifyAppId": "d37w1j07uii9of"
+    }
+  }
+}

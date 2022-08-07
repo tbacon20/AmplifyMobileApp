@@ -1,0 +1,102 @@
+# This "input" configures a global authorization rule to enable public access to
+# all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
+input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
+
+########## QUERY TYPES ##########
+type GenerateApiKeyType {
+	api_key: String!
+}
+
+type GetSignedSessionIDType {
+	signed_session_id: String
+	clear_session_id: String
+}
+
+type GetSystemPublicKeysType {
+	system_date_time_expiring: String
+	rsa_key_id: String
+	rsa_public_key: String
+	ecc_key_id: String
+	ecc_public_key: String
+}
+
+type Mutation {
+	inputUserKeys(
+		user_id: String,
+		ecc_key_id: String,
+		ecc_public_key: String,
+		ttl: Int
+	): sendUserPublicKeysType
+	sendEncryptedData(encrypted_data_string: String!): String
+	intializeSession(clear_session_id: String!, username: String!): String
+}
+
+########## QUERY TYPES ##########
+type Query {
+	getNewApi: GenerateApiKeyType
+	getSignedSessionID: GetSignedSessionIDType
+	getSystemPublicKeys: GetSystemPublicKeysType
+}
+
+################### FILTER STUFF ################
+input TableFloatFilterInput {
+	ne: Float
+	eq: Float
+	le: Float
+	lt: Float
+	ge: Float
+	gt: Float
+	contains: Float
+	notContains: Float
+	between: [Float]
+}
+
+input TableIDFilterInput {
+	ne: ID
+	eq: ID
+	le: ID
+	lt: ID
+	ge: ID
+	gt: ID
+	contains: ID
+	notContains: ID
+	between: [ID]
+	beginsWith: ID
+}
+
+input TableIntFilterInput {
+	ne: Int
+	eq: Int
+	le: Int
+	lt: Int
+	ge: Int
+	gt: Int
+	contains: Int
+	notContains: Int
+	between: [Int]
+}
+
+input TableStringFilterInput {
+	ne: String
+	eq: String
+	le: String
+	lt: String
+	ge: String
+	gt: String
+	contains: String
+	notContains: String
+	between: [String]
+	beginsWith: String
+}
+
+schema {
+	query: Query
+	mutation: Mutation
+}
+
+type sendUserPublicKeysType {
+	user_id: String
+	ecc_key_id: String
+	ecc_public_key: String
+	ttl: Int
+}
